@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <servlet>
+    <description>这是用来测试的（通过登陆验证是否正确和数据库通信）</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>kxServlet</servlet-name>
+    <servlet-class>com.myservlet.kxServlet</servlet-class>
+  </servlet>
+ 
+  <servlet>
+    <description>这是提交注册信息使用的servlet</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>kxWebServlet</servlet-name>
+    <servlet-class>com.webServlect.kxWebServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>这是用来测试的（通过验证login界面是否正确登陆，验证ajax）</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>checkUserServlet</servlet-name>
+    <servlet-class>com.myservlet.checkUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>这是验证表单中学号是否在数据库存在的服务</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>checkSidServlet</servlet-name>
+    <servlet-class>com.webServlect.checkSidServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>这是查询学生序号的服务</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>searchSnum</servlet-name>
+    <servlet-class>com.webServlect.searchSnum</servlet-class>
+  </servlet>
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>kxServlet</servlet-name>
+    <url-pattern>/kxServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>kxWebServlet</servlet-name>
+    <url-pattern>/kxWebServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>checkUserServlet</servlet-name>
+    <url-pattern>/checkUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>checkSidServlet</servlet-name>
+    <url-pattern>/checkSidServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>searchSnum</servlet-name>
+    <url-pattern>/searchSnum</url-pattern>
+  </servlet-mapping>
+  <!-- 设置错误跳转页面 -->
+  <error-page>
+	  <error-code>500</error-code>
+	  <location>/WEB-INF/error.jsp</location>
+  </error-page>
+   <error-page>
+	  <error-code>404</error-code>
+	  <location>/WEB-INF/error.jsp</location>
+  </error-page>
+
+  <!-- 指定首页 -->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
